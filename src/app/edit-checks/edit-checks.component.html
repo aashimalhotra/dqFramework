@@ -1,0 +1,12 @@
+<table>
+  <thead>
+    <tr *ngFor="let column of columns"> {{column}}
+      <td *ngFor="let element of checksCombinations"> {{element[column] | json}}
+      </td>
+      <button>+</button>
+      <!-- <td id="checksOptions" *ngFor="let check of checks">
+        <input type="checkbox"> {{check}}
+      </td> -->
+    </tr>
+  </thead>
+</table>

@@ -1,0 +1,8 @@
+<section *ngFor="let format of fileInfo">
+  <label id="formats">
+      <input type="checkbox" name="{{format}}">
+      {{format}}
+  </label>
+</section>
+<button (click)="gotoPeoplesList()">Back to options</button>
+<button (click)="gotoDqChecks()">Next</button>
