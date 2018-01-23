@@ -1,6 +1,8 @@
-<ul>
-  <li *ngFor="let option of fileOptions">
-    <a [routerLink]="['/options',option]">{{option}}</a>  
+<div class="options">
+<ul class="listOptions">
+  <li class="listElement" *ngFor="let option of fileOptions">
+    <a [routerLink]="['/',option]">{{option}}</a>  
   </li>
 </ul>
+</div>
 

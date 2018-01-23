@@ -10,16 +10,12 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpModule} from '@angular/http';
 
 import {AppRoutingModule} from './app-routing.module';
-import { SingleFileComponent } from './single-file/single-file.component';
-import { EditChecksComponent } from './edit-checks/edit-checks.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FileChooseComponent,
-    FileDetailsComponent,
-    SingleFileComponent,
-    EditChecksComponent
+    FileDetailsComponent
   ],
   imports: [
     BrowserModule,

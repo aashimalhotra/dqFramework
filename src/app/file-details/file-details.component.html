@@ -1,3 +1,4 @@
+<div class="formats"> 
 <section *ngFor="let format of fileInfo">
   <label id="formats">
       <input type="checkbox" name="{{format}}">
@@ -6,3 +7,36 @@
 </section>
 <button (click)="gotoPeoplesList()">Back to options</button>
 <button (click)="gotoDqChecks()">Next</button>
+</div>
+<div class="details" *ngIf="fileDetails">
+  <p>
+    {{selectedFile}}
+  </p>
+  <button (click)="getDqData()">View and Edit DQ Checks</button>
+  <button>Run</button>
+</div>
+<div class="checks" *ngIf="checksDetails">
+  <table>
+    <thead *ngFor="let column of columns">
+      <tr *ngIf="columnsHavingChecks[column]"> {{column}}
+        <td *ngFor="let element of columnsHavingChecks[column]"> {{element}}||
+        </td>
+        <td>
+          <button id="plusminus{{column}}" (click)="listOfChecks(column)">+</button>
+        </td>
+        <td *ngIf="showdiv[column]=='true'">
+          <div *ngFor="let element of checksNotCheckedFinal[column]">
+            <input type="checkbox">{{element}}
+          </div>
+        </td>
+      </tr>
+    </thead>
+  </table>
+  <button id="plusMinusColumn" (click)="addColumn()">+</button><br><br>
+  <div *ngIf="showColumns">
+    <div *ngFor="let column of columnsNotHavingChecks">
+      <input type="checkbox" (change)="addColumnList($event)">{{column}}
+    </div>
+  </div>
+  <button (click)="doneEditing()">Done</button>
+</div>
