@@ -9,7 +9,7 @@ import {FileInfo} from '../file-info';
 })
 export class FileChooseComponent implements OnInit {
 
-  fileOptions: string[]= [];
+  fileOptions: string[];
   constructor(private _fileOptionsService: FileOptionsService) {
    }
   ngOnInit() {
