@@ -8,5 +8,5 @@ import {FileOptionsService} from './file-options.service';
   providers: [FileOptionsService]
 })
 export class AppComponent {
-  title = 'Data Quality Framework';
+  title=  'Data Quality Framework';
 }

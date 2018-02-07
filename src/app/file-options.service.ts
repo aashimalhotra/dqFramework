@@ -7,7 +7,7 @@ export class FileOptionsService {
   dqData: string;
   constructor(private http: HttpClient, private route: ActivatedRoute) { }
   getAll(): string[] {
-    return ['Existing', 'New'];
+    return ['Existing', 'New', 'Stats'];
   }
   getchecks(): string {
     return JSON.stringify({ 'PROD_ID': ['null'], 'FORM_DESC': ['null'], 'STRNT_DESC': ['null'], 'prod_nm': ['null'],
