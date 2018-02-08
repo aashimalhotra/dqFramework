@@ -10,14 +10,13 @@
         <td>Meta Data</td>
       </tr>    
   </thead>
-  <tbody *ngFor="let format of formats">
+  <tbody *ngFor="let format of filesData">
     <tr>
-      <td>
-          <input type="checkbox" name="{{format}}" (change)=disAllowCheckbox($event)>
-      </td>
-      <td></td>
-      <td></td>
-      <td>{{format}}</td>
+      <td><input type="checkbox" (change)=disAllowCheckbox($event)></td>
+      <td>{{idFormatmapping[format[0]['file']]}}</td>
+      <td>{{format[0]['source']}}</td>
+      <td>{{format[0]['table']}}</td>
+      <td>{{format[0]['file']}}</td>
       <td><a href="#">See Meta Data</a></td>
     </tr>
 </tbody>

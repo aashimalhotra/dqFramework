@@ -1,6 +1,15 @@
 <!--The content below is only a placeholder and can be replaced.-->
+<div class="header">
+<img class="headerImage" src="assets\images\Axtria.png">
 <h1 class="title">
     {{ title }}
 </h1>
-<!-- <img [src]="'..\..\..\Axtria.png'" width="500px" height="500px">   -->
+</div>  
+<table class="options">
+  <tr class="listOptions">
+    <td class="listElement" *ngFor="let option of fileOptions">
+      <a [routerLink]="['/',option]">{{option}}</a>  
+    </td>
+  </tr>
+</table>
 <router-outlet></router-outlet>
