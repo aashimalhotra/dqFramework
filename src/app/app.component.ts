@@ -9,4 +9,10 @@ import {FileOptionsService} from './file-options.service';
 })
 export class AppComponent {
   title=  'Data Quality Framework';
+  fileOptions: string[];
+  constructor(private _fileOptionsService: FileOptionsService) {
+   }
+  ngOnInit() {
+    this.fileOptions = this._fileOptionsService.getAll();
+  }
 }

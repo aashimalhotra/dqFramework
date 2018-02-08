@@ -1,6 +1,7 @@
 .formats{
-    position: absolute;
-    top: 10%;
+    position: relative;
+    top: 15px;
+
 }
 .details{
     position: absolute;
@@ -12,4 +13,23 @@
 }
 p{
     margin: 0px;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+tr{
+    padding: 8px;
+    margin: 8px;
+    border-bottom: 1px solid grey;
+}
+table{
+    width: 75%;
+}
+td{
+    width: 15%;
+}
+button{
+    background-color: #04AA72;
+    color: white;
+    padding: 9px 24px 9px 24px;
+    border: none;
+    border-radius: 3px;
 }

@@ -23,6 +23,7 @@ export class FileDetailsComponent implements OnInit {
   checks: string[];
   checksCombinationJson: JSON;
   columnsHavingChecks: JSON;
+  filesData: any;
   idFormatmapping: JSON;
   columnsNotHavingChecks: string[];
   checksDetails: boolean;
@@ -75,6 +76,14 @@ export class FileDetailsComponent implements OnInit {
       console.log(this.checks);
     });
     this.http.get('http://localhost:8080/dqFrameWork/joinedData', { responseType: 'json'}).subscribe(data => {
+      this.filesData = [];
+      for (const j in data) {
+        if (data[j]) {
+          this.keys.push(j);
+          this.idFormatmapping[data[j][0]['file']] = j;
+          this.filesData.push(data[j]);
+        }
+      }
       console.log(data);
     });
     this.fileDetails = false;
