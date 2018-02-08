@@ -1,8 +1,8 @@
-<div class="options">
-<ul class="listOptions">
-  <li class="listElement" *ngFor="let option of fileOptions">
+<table class="options">
+<tr class="listOptions">
+  <td class="listElement" *ngFor="let option of fileOptions">
     <a [routerLink]="['/',option]">{{option}}</a>  
-  </li>
-</ul>
-</div>
+  </td>
+</tr>
+</table>
 

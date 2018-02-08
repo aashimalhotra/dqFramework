@@ -1,23 +1,51 @@
-<div class="formats"> 
-<section *ngFor="let format of fileInfo">
-  <label id="formats">
-      <input type="checkbox" name="{{format}}">
-      {{format}}
-  </label>
-</section>
+<div class="formats" *ngIf="showFormats"> 
+<table>
+  <thead>
+    <tr>
+        <td></td>
+        <td>File Id</td>
+        <td>Source Name</td>
+        <td>Target Table</td>
+        <td>File Name</td>
+        <td>Meta Data</td>
+      </tr>    
+  </thead>
+  <tbody *ngFor="let format of formats">
+    <tr>
+      <td>
+          <input type="checkbox" name="{{format}}" (change)=disAllowCheckbox($event)>
+      </td>
+      <td></td>
+      <td></td>
+      <td>{{format}}</td>
+      <td><a href="#">See Meta Data</a></td>
+    </tr>
+</tbody>
+</table>
+<br>
 <button (click)="gotoPeoplesList()">Back to options</button>
 <button (click)="gotoDqChecks()">Next</button>
 </div>
 <div class="details" *ngIf="fileDetails">
   <p>
     {{selectedFile}}
-  </p>
+  </p><br>
+  <div *ngIf="fileRun">
+    <p>TimeStamp : {{fileLoadInfo[0]['eventTMS']}}</p><br>
+    <p>Number of Records : {{fileLoadInfo[0]['initialCount']}}</p><br>
+    <p>Number of Records : {{fileLoadInfo[0]['rejectCount']}}</p><br>
+    <p>Number of Records : {{fileLoadInfo[0]['insertCount']}}</p>    
+  </div>
+  <div *ngIf="fileFirstRun">
+    <h3>File Is Running For the First Time</h3>
+  </div>
+  <br><button (click)="goToFiles()">Go to Files</button>
   <button (click)="getDqData()">View and Edit DQ Checks</button>
-  <button>Run</button>
+  <button (click)="runDQ()">Run</button>
 </div>
 <div class="checks" *ngIf="checksDetails">
   <table>
-    <thead *ngFor="let column of columns">
+    <tbody *ngFor="let column of columns">
       <tr *ngIf="columnsHavingChecks[column]"> {{column}}
         <td *ngFor="let element of columnsHavingChecks[column]"> {{element}}||
         </td>
@@ -30,7 +58,7 @@
           </div>
         </td>
       </tr>
-    </thead>
+    </tbody>
   </table>
   <button id="plusMinusColumn" (click)="addColumn()">+</button><br><br>
   <div *ngIf="showColumns">

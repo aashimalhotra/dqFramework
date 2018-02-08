@@ -1,17 +1,12 @@
 .options{
-    margin-top: 20%;
-    margin-left: 40%;
-    background-color: dodgerblue;
-    max-width: 170px;
-    border-radius: 13px;
-}
-.listOptions{
-    padding: 15px 15px 15px;
+    position: relative;
+    background-color: steelblue;
+    width: 100%;
 }
 .listElement{
     background-color: white;
+    width: 33%;
     margin-top: 5px;
-    display: block;
     text-decoration: none;
     text-align: center;
 }
